@@ -1,0 +1,99 @@
+:root {
+  --Hijau: #4a8c80;
+  --Pink: #b23282;
+  --Cream: #dfb279;
+  --Abu: #242323;
+  --Hitam: #0c0c0c;
+  --Putih: #ffffff;
+}
+
+body {
+  background-color: var(--color5);
+}
+/* 
+/* Landing */
+
+.page-transition .div {
+  position: fixed;
+  background-color: var(--color3);
+  height: 100%;
+  bottom: 100%;
+  width: 25%;
+  z-index: 9998;
+}
+
+.page-transition .div:nth-child(1) {
+  left: 0px;
+}
+
+.page-transition .div:nth-child(2) {
+  left: 25%;
+}
+
+.page-transition .div:nth-child(3) {
+  left: 50%;
+}
+
+.page-transition .div:nth-child(4) {
+  left: 75%;
+}
+
+.preload {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.preload li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--color2);
+  border-radius: 50%;
+}
+
+/* Main */
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.main .main-title {
+  height: 50vh;
+  color: aqua;
+}
+
+.main .menu-bar {
+  display: flex;
+}
+
+/*box child*/
+.main .menu-bar .box:nth-child(1) {
+  position: relative;
+  background: var(--color4);
+  height: 50vh;
+  width: 50vh;
+  background-color: var(--color1);
+}
+
+.main .menu-bar .box:nth-child(2) {
+  position: relative;
+  width: 50vh;
+  height: 25vh;
+  background-color: var(--color2);
+}
+
+.main .menu-bar .box:nth-child(3) {
+  position: relative;
+  width: 25vh;
+  height: 25vh;
+  background-color: var(--color3);
+}
+
+.main .menu-bar .box:nth-child(4) {
+  position: relative;
+  width: 25vh;
+  height: 25vh;
+  background: var(--color4);
+}
