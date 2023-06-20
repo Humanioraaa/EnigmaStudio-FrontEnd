@@ -78,14 +78,6 @@ body {
   align-items: center;
 }
 
-.wrapper .line {
-  margin-top: 1rem;
-  width: 1120px;
-  height: 0.5rem;
-  background-color: var(--Putih);
-  border-radius: 30%;
-}
-
 body .wrapper {
   width: 1120px;
   justify-content: center;
@@ -105,11 +97,33 @@ body .wrapper h1 {
   font-family: "neue_leidenbold", sans-serif;
 }
 
+/* Tagiline */
+.tagline .wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.tagline .wrapper .line {
+  width: 110vmin;
+  height: 5vmin;
+  background-color: var(--Pink);
+  border-radius: 30px;
+}
+
+.tagline h2 {
+  font-family: "neue_leidensemibold", sans-serif;
+  font-size: 5vw;
+  text-transform: uppercase;
+  color: var(--Putih);
+}
 /* template */
-body .template {
+.template .wrapper {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  margin-top: 5vmin;
 }
 
 body .template .options {
@@ -122,6 +136,7 @@ body .template .options {
   width: calc(100% - 100px);
   height: 832px;
 }
+
 @media screen and (max-width: 718px) {
   body .template .options {
     min-width: 520px;
@@ -283,6 +298,16 @@ body .template .options {
   min-height: 8vh;
   border-radius: 30px;
   align-items: center;
+  margin-top: 5vmin;
+  width: calc(100% - 5vmin);
+}
+
+.template .line {
+  margin-top: 2rem;
+  width: 1120px;
+  height: 0.5rem;
+  background-color: var(--Putih);
+  border-radius: 30%;
 }
 
 /* About */
@@ -291,22 +316,24 @@ body .template .options {
   display: flex;
   flex-direction: column;
   font-family: "neue_leidenbold", sans-serif;
-  margin-top: 100px;
+  margin-top: 20vmin;
   align-items: center;
 }
 
 .about .about-us h2 {
-  font-size: 88px;
+  font-size: 7vmin;
   margin: 0px;
   color: var(--Putih);
 }
 
-.about .about-us .hover::before {
+.about .about-us .hover::before,
+.about .about-us .hover1::before {
   transform: scaleX(0);
   transform-origin: bottom right;
 }
 
-.about .about-us .hover:hover::before {
+.about .about-us .hover:hover::before,
+.about .about-us .hover1:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -319,28 +346,55 @@ body .template .options {
   right: 0;
   bottom: 0;
   left: 0;
-  inset: 0 20% 0 0;
+  inset: 0 50% 0 0;
   background: var(--Putih);
   z-index: -1;
   transition: transform 0.3s ease-out;
 }
 
-.about .about-us .hover {
+.about .about-us .hover1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 58% 0 0;
+  background: var(--Putih);
+  z-index: -1;
+  transition: transform 0.3s ease-out;
+}
+
+.about .about-us .hover,
+.about .about-us .hover1 {
   position: relative;
 }
 
-.about .about-us h2:hover {
+.about .about-us .hover:hover,
+.about .about-us .hover1:hover {
   color: var(--Pink);
 }
 
 .about .about-us .describe {
-  margin-top: 5%;
+  margin-top: 5vmin;
   text-align: right;
   max-width: 832px;
   color: var(--Putih);
   margin-left: 20%;
   font-family: "neue_leidenmedium", sans-serif;
-  font-size: 1.3rem;
+  font-size: 2vmin;
+}
+
+.about .about-footer {
+  margin-top: 5vmin;
+}
+
+@media screen and (max-width: 768px) {
+  .about .about-footer {
+    margin-top: 5vmin;
+    width: 768px;
+  }
 }
 
 /* Marque*/
@@ -367,7 +421,35 @@ body .template .options {
   }
 }
 
+#Union,
+#Union_2 {
+  fill-opacity: 0;
+  animation: draw 4s infinite;
+}
+
+@keyframes draw {
+  0% {
+    fill-opacity: 0;
+  }
+
+  50% {
+    fill-opacity: 1;
+  }
+  100% {
+    fill-opacity: 0;
+  }
+}
+
 /* porto */
+.porto {
+  margin-top: 20vmin;
+}
+
+.porto h2 {
+  font-family: "neue_leidenregular", sans-serif;
+  color: var(--Cream);
+  font-size: 7vmin;
+}
 
 .porto .porto-card {
   max-height: 50vh;
@@ -534,9 +616,9 @@ body .template .options {
 #card,
 #card1,
 #card2 {
-  width: calc(max(150px, 40vmin));
+  width: calc(max(300px, 40vmin));
   aspect-ratio: 2 / 3;
-  border: 0.25rem solid rgb(255 255 255 / 15%);
+  border: 0.15rem solid var(--Abu);
   border-radius: 1rem;
   cursor: pointer;
   overflow: hidden;
@@ -575,6 +657,7 @@ body .template .options {
 }
 
 .service .card-container .card-title {
+  margin-top: 5vmin;
   font-family: "neue_leidenextralight", sans-serif;
   font-size: calc(max(25px, 1.55vw));
   text-align: center;
@@ -582,9 +665,14 @@ body .template .options {
 
 .service .button-service svg {
   max-width: 110vmin;
+  margin-top: 10vmin;
 }
 
 /* contact */
+
+.contact {
+  margin-top: 10vmin;
+}
 
 .contact .wrapper {
   padding: 5vmin;
@@ -607,5 +695,5 @@ body .template .options {
 }
 
 .contact .credit {
-  margin-top: 15vmin;
+  margin-top: 10vmin;
 }
